@@ -1,0 +1,319 @@
+/* ========================================
+   MOBILE MENU CSS
+   Add this to your existing stylesheet
+   ======================================== */
+
+/* Hamburger Button */
+.hamburger {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 10000;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.hamburger-line {
+    width: 28px;
+    height: 2px;
+    background: var(--bg) !important;
+    z-index: 10000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger-line:first-child {
+    margin-bottom: 8px;
+}
+
+/* Hamburger X animation */
+.hamburger.active .hamburger-line:first-child {
+    transform: rotate(45deg) translate(3.5px, 3.5px);
+}
+
+.hamburger.active .hamburger-line:last-child {
+    transform: rotate(-45deg) translate(3.5px, -3.5px);
+}
+
+/* Dark mode support for hamburger */
+.header-menu.dark-mode .hamburger-line {
+    background: var(--bg);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+    background: #111111;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.mobile-menu-overlay::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(46, 12, 243, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.mobile-menu-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue, #2e0cf3), transparent);
+    opacity: 0.3;
+}
+
+/* Mobile Nav Container */
+.mobile-nav-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1rem;
+}
+
+/* Mobile Nav Link */
+.mobile-nav-link {
+    text-decoration: none;
+    color: var(--bg, #f5f5f5);
+    font-family: var(--headers-font);
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(60px);
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.mobile-nav-link .link-text {
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link .link-number {
+    position: absolute;
+    top: 50%;
+    left: -2.5rem;
+    transform: translateY(-50%);
+    font-family: var(--pixel-font);
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--blue, #2e0cf3);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-nav-link:hover .link-text,
+.mobile-nav-link:active .link-text {
+    transform: translateX(1rem);
+}
+
+.mobile-nav-link:hover .link-number,
+.mobile-nav-link:active .link-number {
+    opacity: 1;
+}
+
+.mobile-nav-link:hover::after,
+.mobile-nav-link:active::after {
+    width: 100%;
+}
+
+/* Mobile CTA */
+.mobile-cta {
+    margin-top: 3rem;
+    padding-left: 1rem;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.mobile-cta .btn.primary {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+}
+
+/* Mobile Footer Info */
+.mobile-footer-info {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    right: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    opacity: 0;
+}
+
+.mobile-footer-info .info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-footer-info .label {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: var(--pixel-font);
+}
+
+.mobile-footer-info .value {
+    font-size: 0.875rem;
+    color: var(--bg, #f5f5f5);
+}
+
+.mobile-footer-info .value a {
+    color: var(--bg, #f5f5f5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mobile-footer-info .value a:hover {
+    color: var(--blue, #2e0cf3);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-link {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: var(--pixel-font);
+}
+
+.social-link:hover {
+    color: var(--blue, #2e0cf3);
+}
+
+/* Decorative Elements */
+.menu-decoration {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgba(46, 12, 243, 0.1);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-decoration::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(46, 12, 243, 0.15);
+    border-radius: 50%;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 1100px) {
+
+    .dialog-ballon{
+        display: none;
+    }
+    .header-menu .nav-links,
+    .header-menu .nav-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header-menu {
+        padding: 1rem 1.5rem;
+        justify-content: space-between;
+    }
+
+    .header-menu .logo img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mobile-menu-overlay {
+        padding: 1.5rem;
+    }
+
+    .mobile-nav-container {
+        padding-left: 0.5rem;
+    }
+
+    .mobile-nav-link .link-number {
+        left: -1.5rem;
+        font-size: 0.5rem;
+    }
+
+    .mobile-footer-info {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 2rem;
+    }
+
+    .menu-decoration {
+        display: none;
+    }
+
+    .header-menu .logo img {
+        width: 150px;
+    }
+}

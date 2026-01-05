@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="stylesheet" href="/static/assets/css/header.css">
+    <link rel="stylesheet" href="/static/assets/css/landing-page.css">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div data-barba="wrapper">
+        <div data-barba="container">
+            <div></div>
+            <nav class="header-menu">
+                <div class="logo">
+                    <a href="#">
+                        <img src="/static/assets/images/logos/António Correia.png" alt="">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link" id="bioLink" data-text="Biografia"><span>Biografia</span></a>
+                    <a href="#" class="nav-link" id="servicesLink" data-text="Serviços"><span>Serviços</span></a>
+                    <a href="#" class="nav-link" id="projectsLink" data-text="Projetos"><span>Projetos</span></a>
+                </div>
+
+                <div class="nav-buttons">
+                    <div class="btn primary" id="openLeadModalBtn">CONTACTAR</div>
+                </div>
+
+                <!-- HAMBURGER BUTTON - This was missing! -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="mobile-menu-overlay" id="mobileMenu">
+                <div class="menu-decoration"></div>
+
+                <div class="mobile-nav-container">
+                    <a href="#bio" class="mobile-nav-link">
+                        <span class="link-number">01</span>
+                        <span class="link-text">Biografia</span>
+                    </a>
+                    <a href="#services" class="mobile-nav-link">
+                        <span class="link-number">02</span>
+                        <span class="link-text">Serviços</span>
+                    </a>
+                    <a href="#projects" class="mobile-nav-link">
+                        <span class="link-number">03</span>
+                        <span class="link-text">Projetos</span>
+                    </a>
+                </div>
+
+                <div class="mobile-cta">
+                    <div class="btn primary" id="mobileCta">CONTACTAR</div>
+                </div>
+
+                <div class="mobile-footer-info">
+                    <div class="info-col">
+                        <span class="label">Email</span>
+                        <span class="value"><a href="mailto:info@antoniocorreia.pt">info@antoniocorreia.pt</a></span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <section class="hero" id="hero">
+                <canvas></canvas>
+                <div class="overlay" style="opacity: 0;"></div>
+                <div class="dialog-ballon">Olá! Posso ajudar-te no teu projeto?</div>
+
+
+
+            </section>
+            <!-- OUTRO / INTRO SECTION -->
+            <section class="outro" id="outro">
+                <div class="outro-content">
+                    <div class="accordion">
+                        <!-- Base merged image -->
+                        <div class="slide base">
+                            <img src="/static/assets/images/brain-merged.png" loading="lazy" alt="Brain">
+                        </div>
+
+                        <!-- Left brain -->
+                        <div class="slide left">
+                            <img src="/static/assets/images/brain-2.png" loading="lazy" alt="Creative Brain">
+                        </div>
+
+                        <!-- Right brain -->
+                        <div class="slide right">
+                            <img src="/static/assets/images/brain-1.png" loading="lazy" alt="Technical Brain">
+                        </div>
+
+                        <!-- Content outside of clipped slides -->
+                        <div class="content left-content">
+                            <h2>designer</h2>
+                            <p>Web Designer especialista em UI criativo, moderno e totalmente personalizável ao teu
+                                gosto!
+                            </p>
+                        </div>
+
+                        <div class="content right-content">
+                            <h2>&lt;coder&gt;</h2>
+                            <p>Programador de sistemas front e back end limpos, modernos e eficientes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="outro-bg">
+                    <div class="grid-overlay"></div>
+                    <div class="floating-particles" id="particles"></div>
+                </div>
+            </section>
+
+            <!-- BIO SECTION -->
+            <section class="bio" id="bio">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title" data-text="Biografia">Biografia</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="bio-container">
+                    <div class="bio-image-wrapper">
+                        <div class="bio-image-frame">
+                            <div class="frame-corner top-left"></div>
+                            <div class="frame-corner top-right"></div>
+                            <div class="frame-corner bottom-left"></div>
+                            <div class="frame-corner bottom-right"></div>
+                            <div class="bio-image">
+                                <img src="/static/assets/images/profile.png" alt="António Correia" />
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="bio-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-value="5">0</span>
+                                <span class="stat-label">Anos de Experiência</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-value="10">0</span>
+                                <span class="stat-label">Projetos Concluídos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-value="7">0</span>
+                                <span class="stat-label">Cafés por dia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bio-content">
+                        <div class="bio-intro">
+                            <span class="highlight-text">&lt;developer&gt;</span>
+                            <h3>Olá, sou o António</h3>
+                            <span class="highlight-text">&lt;/developer&gt;</span>
+                        </div>
+
+                        <div class="bio-text">
+                            <p class="lead">
+                                Um apaixonado por tecnologia e design, especializado em criar
+                                experiências digitais memoráveis que unem estética e funcionalidade.
+                            </p>
+                            <p>
+                                Como self-though programmer aprendi grande parte das minhas tech skills por iniciativa
+                                própria, com curiosidade e
+                                empenho aprofundei as skills adquiridas após concluir o PCAP - Certified Associate
+                                Python Programmer.
+                            </p>
+                            <p>
+                                Dedico-me a transformar ideias complexas em soluções elegantes
+                                e intuitivas. Cada projeto é uma oportunidade de inovar e
+                                superar expectativas.
+                            </p>
+
+                        </div>
+
+                        <div class="bio-skills">
+                            <h4>Tech Stack</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item" data-skill="python">
+                                    <div class="skill-icon">🐍</div>
+                                    <span>Python3</span>
+                                </div>
+                                <div class="skill-item" data-skill="html">
+                                    <div class="skill-icon">&#60;/&#62;</div>
+                                    <span>HTML5</span>
+                                </div>
+                                <div class="skill-item" data-skill="css">
+                                    <div class="skill-icon">#</div>
+                                    <span>CSS3</span>
+                                </div>
+                                <div class="skill-item" data-skill="js">
+                                    <div class="skill-icon">JS</div>
+                                    <span>JavaScript</span>
+                                </div>
+                                <div class="skill-item" data-skill="react">
+                                    <div class="skill-icon">⚛</div>
+                                    <span>React</span>
+                                </div>
+                                <div class="skill-item" data-skill="vue">
+                                    <div class="skill-icon">V</div>
+                                    <span>Vue</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES SECTION -->
+            <section class="services" id="services">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title" data-text="Serviços">Serviços</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="services-intro">
+                    <p>Soluções digitais à medida para impulsionar o teu negócio</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card" data-service="design">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="50" cy="50" r="25" fill="none" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="50" cy="50" r="10" fill="currentColor" />
+                                    <line x1="50" y1="10" x2="50" y2="25" stroke="currentColor" stroke-width="2" />
+                                    <line x1="50" y1="75" x2="50" y2="90" stroke="currentColor" stroke-width="2" />
+                                    <line x1="10" y1="50" x2="25" y2="50" stroke="currentColor" stroke-width="2" />
+                                    <line x1="75" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>UI/UX Design</h3>
+                            <p>Interfaces intuitivas e visualmente impactantes que elevam a experiência do utilizador.
+                            </p>
+                            <ul class="service-features">
+                                <li>Design de Interfaces</li>
+                                <li>Prototipagem</li>
+                                <li>Design Systems</li>
+                                <li>User Research</li>
+                            </ul>
+                            <div class="service-cta">
+                                <span>Explorar</span>
+                                <div class="arrow">→</div>
+                            </div>
+                        </div>
+                        <div class="card-border"></div>
+                    </div>
+
+                    <div class="service-card" data-service="development">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 100 100">
+                                    <polyline points="30,30 10,50 30,70" fill="none" stroke="currentColor"
+                                        stroke-width="3" />
+                                    <polyline points="70,30 90,50 70,70" fill="none" stroke="currentColor"
+                                        stroke-width="3" />
+                                    <line x1="60" y1="20" x2="40" y2="80" stroke="currentColor" stroke-width="3" />
+                                </svg>
+                            </div>
+                            <h3>Desenvolvimento Web</h3>
+                            <p>Websites e aplicações web modernas, rápidas e otimizadas para performance.</p>
+                            <ul class="service-features">
+                                <li>Frontend Development</li>
+                                <li>Backend Development</li>
+                                <li>E-commerce</li>
+                                <li>Web Apps</li>
+                            </ul>
+                            <div class="service-cta">
+                                <span>Explorar</span>
+                                <div class="arrow">→</div>
+                            </div>
+                        </div>
+                        <div class="card-border"></div>
+                    </div>
+
+                    <div class="service-card" data-service="branding">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 100 100">
+                                    <polygon points="50,10 90,30 90,70 50,90 10,70 10,30" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <polygon points="50,25 75,37.5 75,62.5 50,75 25,62.5 25,37.5" fill="none"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <circle cx="50" cy="50" r="10" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <h3>Branding Digital</h3>
+                            <p>Identidade visual única que comunica a essência da tua marca.</p>
+                            <ul class="service-features">
+                                <li>Logo Design</li>
+                                <li>Identidade Visual</li>
+                                <li>Guidelines</li>
+                                <li>Motion Graphics</li>
+                            </ul>
+                            <div class="service-cta">
+                                <span>Explorar</span>
+                                <div class="arrow">→</div>
+                            </div>
+                        </div>
+                        <div class="card-border"></div>
+                    </div>
+
+                    <div class="service-card" data-service="consulting">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 100 100">
+                                    <rect x="15" y="20" width="70" height="50" rx="5" fill="none" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <line x1="15" y1="35" x2="85" y2="35" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="25" cy="27.5" r="3" fill="currentColor" />
+                                    <circle cx="35" cy="27.5" r="3" fill="currentColor" />
+                                    <circle cx="45" cy="27.5" r="3" fill="currentColor" />
+                                    <line x1="30" y1="80" x2="40" y2="70" stroke="currentColor" stroke-width="2" />
+                                    <line x1="70" y1="80" x2="60" y2="70" stroke="currentColor" stroke-width="2" />
+                                    <line x1="30" y1="80" x2="70" y2="80" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3>Consultoria Tech</h3>
+                            <p>Orientação estratégica para transformação digital e otimização tecnológica.</p>
+                            <ul class="service-features">
+                                <li>Auditorias Técnicas</li>
+                                <li>Arquitetura de Software</li>
+                                <li>Performance</li>
+                                <li>SEO Técnico</li>
+                            </ul>
+                            <div class="service-cta">
+                                <span>Explorar</span>
+                                <div class="arrow">→</div>
+                            </div>
+                        </div>
+                        <div class="card-border"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS SECTION -->
+            <section class="projects" id="projects">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title" data-text="Projetos">Projetos</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="design">Design</button>
+                    <button class="filter-btn" data-filter="app">Apps</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="/static/assets/images/projects/biofly-bg.png" alt="Project 1" />
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-year">2025</span>
+                                    <div class="project-links">
+                                        <a href="https://biofly.pt" target="_blank" class="project-link"
+                                            aria-label="Ver projeto">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <line x1="10" y1="14" x2="21" y2="3" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" target="_blank" class="project-link" aria-label="Ver código">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">GSAP</span>
+                                <span class="tag">MariaDB</span>
+                            </div>
+                            <h3>Web Site Institucional</h3>
+                            <p>Desenvolvido do zero de acordo com as necessidades e gosto do cliente.</p>
+                        </div>
+                        <div class="project-number">01</div>
+                    </article>
+
+                    <article class="project-card" data-category="design">
+                        <div class="project-image">
+                            <img src="/static/assets/images/projects/pelarigo-bg.png" alt="Project 2" />
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-year">2025</span>
+                                    <div class="project-links">
+                                        <a href="https://pelarigo.beta.pelarigomaquinas.pt" target="_blank"
+                                            class="project-link" aria-label="Ver projeto">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <line x1="10" y1="14" x2="21" y2="3" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" target="_blank" class="project-link" aria-label="Ver código">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">GSAP</span>
+                                <span class="tag">Three.js</span>
+                                <span class="tag">Mariadb</span>
+                            </div>
+                            <h3>Web Site Institucional Redesign</h3>
+                            <p>Redesign completo de website focado em acessibilidade e experiência do
+                                utilizador.</p>
+                        </div>
+                        <div class="project-number">02</div>
+                    </article>
+
+                    <article class="project-card" data-category="design">
+                        <div class="project-image">
+                            <img src="/static/assets/images/projects/maquinas-bg.png" alt="Project 3" />
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-year">2025</span>
+                                    <div class="project-links">
+                                        <a href="https://beta.pelarigomaquinas.pt" target="_blank" class="project-link"
+                                            aria-label="Ver projeto">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <line x1="10" y1="14" x2="21" y2="3" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="project-link" aria-label="Ver código">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CMS</span>
+                                <span class="tag">MariaDB</span>
+                            </div>
+                            <h3>Web Site Institucional Redesign</h3>
+                            <p>Redesign completo de website com implementação de CMS (Content Managment System)</p>
+                        </div>
+                        <div class="project-number">03</div>
+                    </article>
+
+                    <article class="project-card" data-category="app">
+                        <div class="project-image">
+                            <img src="/static/assets/images/projects/scrapper-bg.png" alt="Project 4" />
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-year">2023</span>
+                                    <div class="project-links">
+                                        <a href="https://github.com/apecorreia/ProductScraper" target="_blank"
+                                            class="project-link" aria-label="Ver código">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">BeautifulSoup</span>
+                                <span class="tag">Scrapy</span>
+                                <span class="tag">Pipelines</span>
+                                <span class="tag">Data analize</span>
+                            </div>
+                            <h3>Web Scrapper</h3>
+                            <p>Desktop app que recolhe diariamente dados dos produtos das lojas Continente, Auchan e
+                                Pingo Doce, processa os dados e guarda-os em bases de dados relacionais.</p>
+                        </div>
+                        <div class="project-number">04</div>
+                    </article>
+
+                    <article class="project-card featured" data-category="app">
+                        <div class="project-image">
+                            <img src="/static/assets/images/projects/smartcart-bg.png" alt="Project 5" />
+                            <div class="project-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-year">2024</span>
+                                    <div class="project-links">
+                                        <a href="https://github.com/apecorreia/SmartCart" target="_blank"
+                                            class="project-link" aria-label="Ver código">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path
+                                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="featured-badge">Destaque</div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Numpy</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">MySql</span>
+                                <span class="tag">Data analize</span>
+                                <span class="tag">CSV</span>
+                                <span class="tag">LLM</span>
+                            </div>
+                            <h3>Smart Cart</h3>
+                            <p>Comparador de preços. Utiliza uma base de dados com produtos das lojas Continente, Auchan
+                                e Pingo Doce. Criado modelo de AI que identifica os melhores produtos de acordo com as
+                                escolhas do utilizador.</p>
+                        </div>
+                        <div class="project-number">05</div>
+                    </article>
+                </div>
+
+                <div class="projects-cta">
+                    <a href="#" class="cta-button">
+                        <span>Ver Todos os Projetos</span>
+                        <div class="cta-arrow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+
+            <script src="https://kit.fontawesome.com/400431d1bb.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+            <script src="https://kit.fontawesome.com/400431d1bb.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+            <script src="/static/js/main.js"></script>
+            <script type="module" src="/static/js/header.js"></script>
+            <script src="/static/js/home.js"></script>
+            <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.28/build/spline-viewer.js"></script>
+            <spline-viewer url="https://prod.spline.design/kCMi3Oue-jJdqdXg/scene.splinecode"></spline-viewer>
+</body>
+
+</html>
